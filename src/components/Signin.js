@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
 
 
@@ -6,16 +7,9 @@ export const Signin = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] =useState("");
  
+    const navigate = useNavigate();
 
-    useEffect(()=>{
-      console.log({password})
-    }, [password]);
-
-    useEffect(()=>{
-        console.log({email})
-      }, [email]);
-
-
+  
     return(
         <>
         <form 
@@ -28,7 +22,9 @@ export const Signin = (props) => {
                       email,
                       password,
                     })
-                    .then((response) => props.setToken(response.data.token))
+                    .then((response) => {props.setToken(response.data.token);
+                    return Promise.resolve().then(()=> navigate('/todos'));
+                    })
                     .catch((error) => {
                       if (error.response) {
                         // The request was made and the server responded with a status code
