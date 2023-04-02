@@ -22,7 +22,9 @@ export const Signin = (props) => {
                       email,
                       password,
                     })
-                    .then((response) => {props.setToken(response.data.token);
+                    .then((response) => {
+                        console.log(response.data)
+                        props.setToken(response.data.token);
                     return Promise.resolve().then(()=> navigate('/todos'));
                     })
                     .catch((error) => {
