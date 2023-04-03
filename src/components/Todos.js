@@ -15,7 +15,7 @@ export const Todos = ({token}) => {
           }
         }).then((response)=>{
             setTodos(response.data);
-            setUserId(response.data[0].user);
+            setUserId(response.data[0].user_Id);
         })
       }, [token]);
 
@@ -25,7 +25,7 @@ export const Todos = ({token}) => {
             {<CreateTodo token={token} userId={userId} setTodos={setTodos} todos={todos}/>}
         <ul className="list">
 
-        {todos.map((item, index)=> {
+        {Array.isArray(todos) && todos.map((item, index)=> {
             return (
             <li className="item" 
                 key={`todo-${index}`}>
