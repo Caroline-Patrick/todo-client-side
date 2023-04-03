@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
 
@@ -60,7 +60,7 @@ export const Signup = (props) => {
                     onChange={(e)=>setPassword(e.target.value)}
                     />
             </label>
-            <input type="submit" value="Sign in"/>
+            <input className="submit" type="submit" value="Sign in"/>
         </form>
         </>
     )

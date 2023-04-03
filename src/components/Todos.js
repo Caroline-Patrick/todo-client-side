@@ -14,7 +14,7 @@ export const Todos = ({token}) => {
             Authorization: `Bearer ${token}`
           }
         }).then((response)=>{
-            console.table(response.data)
+            // console.table(response.data)
             setTodos(response.data);
             setUserId(response.data[0].user_id);
         })

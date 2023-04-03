@@ -24,6 +24,7 @@ const [todo, setTodo] = useState("");
             })}
             >
             <input
+                className="input"
                 type="text"
                 value={todo}
                 onChange={((e)=>{
@@ -32,6 +33,7 @@ const [todo, setTodo] = useState("");
                 })}
                  />
             <input 
+                className="submit"
                 type="submit" 
                 value="Add Todo!"
                  />
