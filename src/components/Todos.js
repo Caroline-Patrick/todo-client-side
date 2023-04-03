@@ -14,15 +14,11 @@ export const Todos = ({token}) => {
             Authorization: `Bearer ${token}`
           }
         }).then((response)=>{
-            // console.table(response.data)
             setTodos(response.data);
-            setUserId(response.data[0].user_id);
+            setUserId(response.data[0].user);
         })
       }, [token]);
 
-    //   useEffect(()=>{
-    //     console.log(userId)
-    //   },[userId])
     return (
         <>
         <div className="todo-container">
