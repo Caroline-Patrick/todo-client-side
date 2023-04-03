@@ -19,7 +19,7 @@ const [todo, setTodo] = useState("");
                     }
                 })
                 setTodo("")
-                setTodos([...todos, {todo, user_id: userId}] )
+                setTodos(Array.isArray(todos) ? [...todos, { todo, user_id: userId }] : [{ todo, user_id: userId }]);
                 ;
             })}
             >
