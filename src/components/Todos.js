@@ -9,7 +9,7 @@ export const Todos = ({token}) => {
     const [userId, setUserId] = useState();
     
     useEffect(()=>{
-        axios.get("http://localhost:5000/todos", {
+        axios.get("https://todo-workshop-server.vercel.app/todos", {
           headers: {
             Authorization: `Bearer ${token}`
           }

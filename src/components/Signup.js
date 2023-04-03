@@ -19,7 +19,7 @@ export const Signup = (props) => {
                     e.preventDefault()
 
                     axios
-                    .post("http://localhost:5000/signup", {
+                    .post("https://todo-workshop-server.vercel.app/signup", {
                       name,
                       email,
                       password,

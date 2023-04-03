@@ -10,7 +10,7 @@ const [todo, setTodo] = useState("");
         <form 
             onSubmit={((e)=>{
                 e.preventDefault();
-                axios.post('http://localhost:5000/todos', {
+                axios.post('https://todo-workshop-server.vercel.app/todos', {
                     todo,
                     user_id: userId
                 }, {
